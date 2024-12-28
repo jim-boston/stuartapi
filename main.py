@@ -1,20 +1,10 @@
-import uvicorn
-from fastapi import FastAPI
+from common.settings import Settings
 
-# custom modules
-from routers import country
+settings = Settings()
 
+if settings.mode == "host":
+    import host
 
-app = FastAPI()
-app.include_router(country.router)
+elif settings.mode == "test":
+    import test
 
-@app.get("/")
-async def root():
-    return {"message": "StuartAPI v.01"}
-
-@app.get("/health")
-async def health():
-    return {"message": "Healthy"}
-
-# run hosting
-uvicorn.run(app, host="0.0.0.0", port=8000)
