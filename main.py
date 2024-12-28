@@ -10,11 +10,11 @@ app.include_router(country.router)
 
 @app.get("/")
 async def root():
-    return {"message": "StuartAPI v.1"}
+    return {"message": "StuartAPI v.01"}
 
 @app.get("/health")
 async def health():
-    print('health endpoint')
+    return {"message": "Healthy"}
 
 # run hosting
 uvicorn.run(app, host="0.0.0.0", port=8000)
