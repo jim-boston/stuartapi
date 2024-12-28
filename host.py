@@ -24,5 +24,9 @@ app.include_router(student_router)
 async def root():
     return {"message": "StuartAPI v0.02"}
 
+@app.get("/health")
+async def health():
+    return {"message": "Healthy"}
+
 # run hosting
 uvicorn.run(app, host="0.0.0.0", port=8000)
