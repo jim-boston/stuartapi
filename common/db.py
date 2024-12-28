@@ -15,10 +15,6 @@ print("database", settings.database)
 
 connection_url = URL.create(
     "mssql+pyodbc",
-    #    username="admin",
-    #    password="tpifDOG!",
-    #    host="mc-consmgr.cvpf5emrbdmm.us-east-1.rds.amazonaws.com",
-    #    database="mc-consmgr",
     username=settings.username,
     password=settings.password,
     host=settings.host,

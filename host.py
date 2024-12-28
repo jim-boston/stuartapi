@@ -9,13 +9,6 @@ from routers.student import router as student_router
 
 settings = Settings()
 
-# notes
-# - only a POC with get all and get record
-# - No response schemas because I want to have a custom response based on fields passed (didn't know how to make a dynamic response schema)
-# - no security
-# - SQL Server DB with views for each Model.  I don't perform JOINs in the ORM, I put them in the SQL views
-# - I explored creating runtime models and schemas, but stopped because it seemd to much work.  So I have an external generator of Model object classes.
-
 app = FastAPI()
 app.include_router(country_router)
 app.include_router(student_router)
